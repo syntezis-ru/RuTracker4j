@@ -1,0 +1,55 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g. 0.0.1)'
+        required: true
+        type: string
+  release:
+    types: [ published ]
+
+jobs:
+  publish:
+    name: Publish to Maven Central
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+          server-id: central
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+
+      - name: Import GPG key
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --yes --import
+          gpg --list-secret-keys --keyid-format LONG
+
+      - name: Set version
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION=${GITHUB_REF_NAME#v}
+          fi
+          echo "Publishing version: $VERSION"
+          ./mvnw versions:set-property -Dproperty=revision -DnewVersion=$VERSION -DgenerateBackupPoms=false
+
+      - name: Build and publish
+        run: ./mvnw --batch-mode clean deploy -DskipTests
+        env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
+          SILENZZZ_SYNTEZIS_GPG_KEY_ID: ${{ secrets.SILENZZZ_SYNTEZIS_GPG_KEY_ID }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.SILENZZZ_SYNTEZIS_GPG_PASSPHRASE }}
