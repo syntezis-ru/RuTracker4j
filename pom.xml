@@ -9,6 +9,7 @@
     <version>${revision}</version>
 
     <properties>
+        <java.version>21</java.version>
         <revision>0.0.1</revision>
 
         <httpclient.version>4.5.14</httpclient.version>
@@ -215,6 +216,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <source>${java.version}</source>
                     <release>${java.version}</release>
                     <annotationProcessorPaths>
                         <path>
