@@ -14,7 +14,7 @@
         <httpclient.version>4.5.14</httpclient.version>
         <guava.version>33.0.0-jre</guava.version>
         <mockito-core.version>5.7.0</mockito-core.version>
-        <assertj-core.version>3.16.1</assertj-core.version>
+        <assertj-core.version>3.27.7</assertj-core.version>
         <commons-lang3.version>3.14.0</commons-lang3.version>
         <jsoup.version>1.17.2</jsoup.version>
         <slf4j-api.version>2.0.12</slf4j-api.version>
