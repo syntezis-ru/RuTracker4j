@@ -11,7 +11,7 @@
     <name>RuTracker4j</name>
     <description>Java library that provides scrap access to RuTracker.org.</description>
 
-    <url>https://github.com/silenzzz/RuTracker4j</url>
+    <url>https://github.com/syntezis-ru/RuTracker4j</url>
 
     <organization>
         <name>Syntezis</name>
@@ -32,8 +32,35 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/silenzzz/RuTracker4j/issues/new/choose</url>
+        <url>https://github.com/syntezis-ru/RuTracker4j/issues/new/choose</url>
     </issueManagement>
+
+    <ciManagement>
+        <system>GitHub</system>
+        <url>https://github.com/syntezis-ru/RuTracker4j/actions</url>
+    </ciManagement>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/syntezis-ru/RuTracker4j</url>
+        <connection>scm:git:git://github.com/syntezis-ru/RuTracker4j.git</connection>
+        <developerConnection>scm:git:https://github.com/syntezis-ru/RuTracker4j.git</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>Maven Central</name>
+            <url>https://central.sonatype.com</url>
+        </repository>
+    </distributionManagement>
 
     <properties>
         <java.version>17</java.version>
