@@ -21,7 +21,7 @@ Add the dependency to the `<dependencies>` section in your `pom.xml`:
 
 ```xml
 <dependency>
-    <groupId>dev.silenzzz</groupId>
+    <groupId>ru.syntezis</groupId>
     <artifactId>RuTracker4j</artifactId>
     <version>0.0.1</version>
 </dependency>
@@ -32,7 +32,7 @@ The library is available on Maven Central Repository, so no additional repositor
 ### Gradle
 
 ```groovy
-implementation 'dev.silenzzz:RuTracker4j:0.0.1'
+implementation 'ru.syntezis:RuTracker4j:0.0.1'
 ```
 
 ## Usage
