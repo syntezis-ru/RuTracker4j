@@ -4,12 +4,39 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dev.silenzzz</groupId>
-    <artifactId>RuTracker4j</artifactId>
+    <groupId>ru.syntezis</groupId>
+    <artifactId>rutracker4j</artifactId>
     <version>${revision}</version>
 
+    <name>RuTracker4j</name>
+    <description>Java library that provides scrap access to RuTracker.org.</description>
+
+    <url>https://github.com/silenzzz/RuTracker4j</url>
+
+    <organization>
+        <name>Syntezis</name>
+        <url>https://syntezis.ru</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>1</id>
+            <name>silenzzz</name>
+            <email>silenzzz@syntezis.ru</email>
+            <url>https://github.com/silenzzz</url>
+            <timezone>UTC+3</timezone>
+            <organization>Syntezis</organization>
+            <organizationUrl>https://syntezis.ru</organizationUrl>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/silenzzz/RuTracker4j/issues/new/choose</url>
+    </issueManagement>
+
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
         <revision>0.0.1</revision>
 
         <httpclient.version>4.5.14</httpclient.version>
