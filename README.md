@@ -1,64 +1,70 @@
 # RuTracker4j
 
-A Java library that provides access to RuTracker.org.
+A Java library that provides convenient access to RuTracker.org with support for searching torrents, retrieving topic details, and downloading torrent files.
 
 ## Features
 
 - Search for torrents by keyword
-- Get topic details
-- Download torrent file
+- Retrieve detailed topic information
+- Download torrent files
+- Simple and intuitive API
 
 ## Documentation
 
-See wiki on [GitHub](https://github.com/silenzzz/RuTracker4j/wiki).
+For more information and examples, see the [GitHub Wiki](https://github.com/silenzzz/RuTracker4j/wiki).
 
 ## Installation
 
-1. Add Jitpack repository in `<repositories>` section in __`pom.xml`__:
+### Maven
 
-    ```xml
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
-    ```
+Add the dependency to the `<dependencies>` section in your `pom.xml`:
 
-2. Add RuTracker4j dependency in `<dependencies>` section in __`pom.xml`__:
-
-    ```xml
-    <dependency>
-        <groupId>dev.silenzzz</groupId>
+```xml
+<dependency>
+    <groupId>dev.silenzzz</groupId>
     <artifactId>RuTracker4j</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    ```
+    <version>0.0.1</version>
+</dependency>
+```
+
+The library is available on Maven Central Repository, so no additional repository configuration is required.
+
+### Gradle
+
+```groovy
+implementation 'dev.silenzzz:RuTracker4j:0.0.1'
+```
 
 ## Usage
 
-### Create rutracker client
+### Initialize the client
 
 ```java
-import com.example.RuTracker4j;
 import dev.silenzzz.rutracker4j.RuTracker4jDefaultClient;
 import dev.silenzzz.rutracker4j.scrapper.net.AccountCredentials;
 
-//...//
-RuTracker4j ruTracker = new RuTracker4jDefaultClient(new AccountCredentials("user", "pass"));
-///...//
+RuTracker4j ruTracker = new RuTracker4jDefaultClient(
+    new AccountCredentials("username", "password")
+);
 ```
 
-### Get topic
+### Get topic by ID
 
 ```java
-//...//
 Topic topic = ruTracker.findTopicById(633781);
-///...//
+System.out.println(topic.getTitle());
 ```
-
-TODO more examples
 
 ## License
 
-Released under the MIT License. See [LICENSE](LICENSE) for more.
+This project is licensed under the [Apache License 2.0](LICENSE).
+
+---
+
+<div style="text-align: center;">
+  <a href="https://syntezis.ru">
+    <img src="https://syntezis.ru/img/logo.svg" alt="Syntezis" height="40"/>
+  </a>
+  <br/>
+  <sub>Built and maintained by <a href="https://syntezis.ru">Syntezis</a></sub>
+</div>
