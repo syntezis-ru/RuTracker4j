@@ -81,7 +81,7 @@
         <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit5.version>6.1.1</junit5.version>
+        <junit5.version>6.1.2</junit5.version>
 
         <!-- Dependency management versions -->
         <commons-lang3.version>3.20.0</commons-lang3.version>
